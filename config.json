@@ -1,0 +1,18 @@
+{
+    "log" : "logging.json",
+    "auth" : {
+        "consumer_key"        : "YOUR_API_CONSUMER_KEY",
+        "consumer_secret"     : "YOUR_API_CONSUMER_SECRET",
+        "access_token_key"    : "YOUR_ACCESS_TOKEN_KEY",
+        "access_token_secret" : "YOUR_ACCESS_TOKEN_SECRET"
+    },
+    "tweet":[
+        {
+            "sid"       : "time",
+            "cron"      : "0 * * * *",
+            "tweet"     : "{timestamp} #bot",
+            "timestamp" : "%x %X",
+            "delete"    : true
+        }
+    ]
+}

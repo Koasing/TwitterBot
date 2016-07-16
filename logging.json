@@ -1,0 +1,48 @@
+{
+    "version":1,
+    "formatters":{
+        "console-fmt":{
+            "format":"{asctime} {levelname} {message}",
+            "datefmt":"%H:%M",
+            "style":"{"
+        },
+        "logfile-fmt":{
+            "format":"{asctime} {levelname} {message}",
+            "datefmt":null,
+            "style":"{"
+        }
+    },
+    "filters":{
+    },
+    "handlers":{
+        "console":{
+            "class":"logging.StreamHandler",
+            "level":"INFO",
+            "formatter":"console-fmt",
+            "filters":[],
+            "stream":null
+        },
+        "logfile":{
+            "class":"logging.handlers.TimedRotatingFileHandler",
+            "level":"DEBUG",
+            "formatter":"logfile-fmt",
+            "filters":[],
+            "filename":"TwitterBot.log",
+            "when":"midnight",
+            "backupCount":7,
+            "encoding":"utf8"
+        }
+    },
+    "loggers":{
+        "BotTweet":{
+            "level":"INFO",
+            "propagate":false,
+            "filters":[],
+            "handlers":["console", "logfile"]
+        }
+    },
+    "root":{
+    },
+    "incremental":false,
+    "disable_existing_loggers":true
+}
